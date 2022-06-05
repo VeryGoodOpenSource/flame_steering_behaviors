@@ -1,5 +1,5 @@
 name: steering_behaviors
-description: Flame behaviors used to organically manage the movement of an entity
+description: An implementation of steering behaviors for Flame Behaviors.
 version: 0.0.1-dev.0
 
 environment:
