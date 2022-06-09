@@ -35,7 +35,8 @@ void main() {
         onNewAngle: (angle) {
           expect(angle, equals(expectedAngle));
         },
-      )..testRandom = random;
+        random: random,
+      );
 
       when(random.nextDouble).thenReturn(0.25);
 
@@ -51,7 +52,8 @@ void main() {
           angle: 0,
           maximumAngle: 0,
           onNewAngle: (angle) {},
-        )..testRandom = random;
+          random: random,
+        );
 
         final linearAcceleration = steering.getSteering(parent);
         expect(linearAcceleration, closeToVector(40, 0, epsilon: 0.01));
@@ -65,7 +67,8 @@ void main() {
           angle: 180 * degrees2Radians,
           maximumAngle: 0,
           onNewAngle: (angle) {},
-        )..testRandom = random;
+          random: random,
+        );
 
         when(random.nextDouble).thenReturn(0.25);
 
@@ -81,7 +84,8 @@ void main() {
           maximumAngle: 0,
           angle: 90 * degrees2Radians,
           onNewAngle: (angle) {},
-        )..testRandom = random;
+          random: random,
+        );
 
         when(random.nextDouble).thenReturn(0.25);
 
@@ -97,7 +101,8 @@ void main() {
           angle: 270 * degrees2Radians,
           maximumAngle: 0,
           onNewAngle: (angle) {},
-        )..testRandom = random;
+          random: random,
+        );
 
         final linearAcceleration = steering.getSteering(parent);
         expect(linearAcceleration, closeToVector(0, -40, epsilon: 0.01));
