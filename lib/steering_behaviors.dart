@@ -1,4 +1,5 @@
-/// Flame behaviors used to organically manage the movement of an entity.
 library steering_behaviors;
 
-export 'src/steering_behaviors.dart';
+export 'src/behaviors/behaviors.dart';
+export 'src/mixins/mixins.dart';
+export 'src/steering/steering.dart';
