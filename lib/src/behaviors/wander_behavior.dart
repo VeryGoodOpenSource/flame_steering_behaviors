@@ -14,7 +14,7 @@ class WanderBehavior<Parent extends Steerable>
     required double startingAngle,
     Random? random,
   })  : _angle = startingAngle,
-        _random = random ?? Random();
+        random = random ?? Random();
 
   /// The distance to the circle center of the next target.
   final double circleDistance;
@@ -27,7 +27,7 @@ class WanderBehavior<Parent extends Steerable>
   double _angle;
 
   /// The random number generator used to calculate the next wander [angle].
-  final Random _random;
+  final Random random;
 
   @override
   void update(double dt) {
@@ -37,7 +37,7 @@ class WanderBehavior<Parent extends Steerable>
         maximumAngle: maximumAngle,
         angle: _angle,
         onNewAngle: (angle) => _angle = angle,
-        random: _random,
+        random: random,
       ),
       dt,
     );

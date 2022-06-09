@@ -20,6 +20,16 @@ void main() {
       random = _MockRandom();
     });
 
+    test('fall back to normal Random if none is given', () {
+      final behavior = WanderBehavior(
+        circleDistance: 1,
+        maximumAngle: 2,
+        startingAngle: 3,
+      );
+
+      expect(behavior.random, isA<Random>());
+    });
+
     flameTester.test(
       'calculates the new angle and wandering force',
       (game) async {
