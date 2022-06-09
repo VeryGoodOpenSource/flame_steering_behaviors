@@ -18,7 +18,6 @@ void main() {
 
     setUp(() {
       random = _MockRandom();
-      when(random.nextDouble).thenReturn(0);
     });
 
     flameTester.test(
@@ -31,15 +30,18 @@ void main() {
         const expectedAngle =
             startAngle + (randomValue * maximumAngle) - (maximumAngle * 0.5);
 
+        when(random.nextDouble).thenReturn(randomValue);
+
         final wanderBehavior = WanderBehavior(
           circleDistance: 40,
           maximumAngle: maximumAngle,
           startingAngle: startAngle,
-        )..testRandom = random;
+          random: random,
+        );
 
         final parent = SteerableEntity(behaviors: [wanderBehavior]);
-
-        when(random.nextDouble).thenReturn(0.25);
+        await game.ensureAdd(parent);
+        game.update(1);
 
         expect(wanderBehavior.angle, expectedAngle);
         expect(parent.velocity, closeToVector(0, 40, epsilon: 0.01));

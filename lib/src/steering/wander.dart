@@ -17,6 +17,7 @@ class Wander extends SteeringCore {
     required this.maximumAngle,
     required this.angle,
     required this.onNewAngle,
+    required this.random,
   });
 
   /// The distance to the circle center of the next target.
@@ -35,10 +36,8 @@ class Wander extends SteeringCore {
   /// The next call to [Wander] expects the angle to be this value.
   final ValueChanged<double> onNewAngle;
 
-  /// Used in tests to allow for testing the angle.
-  @visibleForTesting
-  Random? testRandom;
-  Random get _random => testRandom ?? Random();
+  /// The random number generator used to calculate the next wander [angle].
+  final Random random;
 
   @override
   Vector2 getSteering(Steerable parent) {
@@ -53,7 +52,7 @@ class Wander extends SteeringCore {
 
     // Randomly pick a new angle based on the maximum angle and expose it.
     onNewAngle(
-      angle + _random.nextDouble() * maximumAngle - maximumAngle * 0.5,
+      angle + random.nextDouble() * maximumAngle - maximumAngle * 0.5,
     );
 
     // Calculate the next target position by displacing the circle center.
