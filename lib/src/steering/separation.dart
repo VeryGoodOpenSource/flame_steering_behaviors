@@ -9,15 +9,15 @@ class Separation extends SteeringCore {
   /// {@macro separation}
   const Separation(
     this.entities, {
-    required this.maxSepDist,
-    required this.sepMaxAcceleration,
+    required this.maxDistance,
+    required this.maxAcceleration,
   });
 
   /// The maximum distance at which the entity will separate.
-  final double maxSepDist;
+  final double maxDistance;
 
   /// The maximum acceleration the entity can apply to enable separation.
-  final double sepMaxAcceleration;
+  final double maxAcceleration;
 
   /// The entities to separate from.
   final Iterable<Entity> entities;
@@ -31,10 +31,10 @@ class Separation extends SteeringCore {
       }
       final direction = entity.position - parent.position;
       final dist = direction.length;
-      if (dist < maxSepDist) {
-        final strength = sepMaxAcceleration *
-            (maxSepDist - dist) /
-            (maxSepDist - entity.size.x - parent.size.x);
+      if (dist < maxDistance) {
+        final strength = maxAcceleration *
+            (maxDistance - dist) /
+            (maxDistance - entity.size.x - parent.size.x);
 
         direction.normalize();
         acceleration.add(direction * strength);

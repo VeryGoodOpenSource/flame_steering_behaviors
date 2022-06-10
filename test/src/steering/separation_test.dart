@@ -24,8 +24,8 @@ void main() {
             size: Vector2.all(32),
           ),
         ],
-        maxSepDist: 50,
-        sepMaxAcceleration: 10,
+        maxDistance: 50,
+        maxAcceleration: 10,
       );
 
       final linearAcceleration = steering.getSteering(parent);
@@ -41,8 +41,8 @@ void main() {
 
       final steering = Separation(
         [parent],
-        maxSepDist: 50,
-        sepMaxAcceleration: 10,
+        maxDistance: 50,
+        maxAcceleration: 10,
       );
 
       final linearAcceleration = steering.getSteering(parent);
@@ -64,8 +64,8 @@ void main() {
             size: Vector2.all(32),
           ),
         ],
-        maxSepDist: 50,
-        sepMaxAcceleration: 10,
+        maxDistance: 50,
+        maxAcceleration: 10,
       );
 
       final linearAcceleration = steering.getSteering(parent);

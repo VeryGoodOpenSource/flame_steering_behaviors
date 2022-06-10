@@ -9,15 +9,15 @@ class SeparationBehavior<Parent extends Steerable>
   /// {@macro separation_behavior}
   SeparationBehavior(
     this.entities, {
-    required this.maxSepDist,
-    required this.sepMaxAcceleration,
+    required this.maxDistance,
+    required this.maxAcceleration,
   });
 
   /// The maximum distance at which the entity will separate.
-  final double maxSepDist;
+  final double maxDistance;
 
-  /// The entities to separate from.
-  final double sepMaxAcceleration;
+  /// The maximum acceleration the entity can apply to enable separation.
+  final double maxAcceleration;
 
   /// The entities to separate from.
   final List<Entity> entities;
@@ -27,8 +27,8 @@ class SeparationBehavior<Parent extends Steerable>
     steer(
       Separation(
         entities,
-        maxSepDist: maxSepDist,
-        sepMaxAcceleration: sepMaxAcceleration,
+        maxDistance: maxDistance,
+        maxAcceleration: maxAcceleration,
       ),
       dt,
     );
