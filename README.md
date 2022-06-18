@@ -16,7 +16,7 @@ Developed with 💙 by [Very Good Ventures][very_good_ventures_link] 🦄
 
 An implementation of steering behaviors for Flame Behaviors. 
 See [Steering Behaviors For Autonomous Characters](https://www.red3d.com/cwr/steer/) by 
-[Craig Reynolds](https://www.red3d.com/cwr/) for an ind-depth explanation
+[Craig Reynolds](https://www.red3d.com/cwr/) for an in-depth explanation
 
 ---
 
