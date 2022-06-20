@@ -28,7 +28,64 @@ flutter pub add steering_behaviors
 
 ## Usage ✨
 
-TODO(wolfen): when the steering behaviors are added, add usages here.
+This package is built on top of the [`flame_behaviors`](https://pub.dev/packages/flame_behaviors), if you are not yet familiar with it, we recommend reading up on the documentation of that package first.
+
+### Steerable
+
+If you want to apply steering behaviors to your entities you have to add the `Steerable` mixin to your entity class:
+
+```dart
+class MyEntity extends Entity with Steerable {
+  /// Provide the max velocity this entity can hold.
+  double get maxVelocity => 100;
+
+  ...
+}
+```
+
+The `Steerable` mixin provides a `velocity` value to your entity, this velocity will then be applied on each update cycle to your entity until the velocity becomes zero.
+
+### Steering Behaviors
+
+Each algorithm defined by this project is available as a `Behavior` and you can add them to your [steerable](#steerable) entities as you would with any behavior:
+
+```dart
+class MyEntity extends Entity with Steerable {
+  MyEntity() : super(
+    behaviors: [
+      WanderBehavior(
+        circleDistance: 200,
+        maximumAngle: 45 * degrees2Radians,
+        startingAngle: 0,
+      )
+    ]
+  );
+
+  ...
+}
+```
+
+Some steering behaviors require information that is not always available on entity creation, when that happens we recommend using the entity's `onLoad` method:
+
+```dart
+class MyEntity extends Entity with Steerable {
+  ...
+
+  @override
+  Future<void> onLoad() async {
+    world.children.register<MyOtherEntity>();
+    await add(
+      SeparationBehavior(
+        world.children.query<MyOtherEntity>(),
+        maxDistance: 25,
+        maxAcceleration: 1000,
+      ),
+    );
+  }
+
+  ...
+}
+```
 
 [ci_badge]: https://github.com/VeryGoodOpenSource/steering_behaviors/workflows/steering_behaviors/badge.svg
 [ci_link]: https://github.com/VeryGoodOpenSource/steering_behaviors/actions
