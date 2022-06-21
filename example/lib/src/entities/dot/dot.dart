@@ -1,5 +1,7 @@
-import 'package:example/behaviors/screen_collision_behavior.dart';
-import 'package:example/main.dart';
+import 'dart:math';
+
+import 'package:example/src/behaviors/behaviors.dart';
+import 'package:example/src/example_game.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
@@ -8,6 +10,7 @@ import 'package:steering_behaviors/steering_behaviors.dart';
 class Dot extends Entity with Steerable {
   Dot({
     super.position,
+    Random? random,
   }) : super(
           size: Vector2.all(relativeValue),
           children: [
@@ -23,6 +26,7 @@ class Dot extends Entity with Steerable {
               circleDistance: 3 * relativeValue,
               maximumAngle: 45 * degrees2Radians,
               startingAngle: 0,
+              random: random,
             )
           ],
         );
