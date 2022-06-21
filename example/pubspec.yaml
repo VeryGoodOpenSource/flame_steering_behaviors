@@ -1,0 +1,18 @@
+name: example
+description: A Very Good Example for steering behaviors.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flame: ^1.2.0
+  flame_behaviors: ^0.1.0
+  flutter:
+    sdk: flutter
+  steering_behaviors:
+    path: ../
+
+dev_dependencies:
+  very_good_analysis: ^3.0.1
