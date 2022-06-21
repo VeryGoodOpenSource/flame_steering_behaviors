@@ -1,6 +1,15 @@
 name: example
 
-on: [pull_request, push]
+on:
+  push:
+    paths:
+      - "example/**"
+      - ".github/workflows/example.yaml"
+
+  pull_request:
+    paths:
+      - "example/**"
+      - ".github/workflows/example.yaml"
 
 jobs:
   build:
@@ -8,3 +17,4 @@ jobs:
     with:
       flutter_channel: stable
       flutter_version: 3.0.2
+      working_directory: example
