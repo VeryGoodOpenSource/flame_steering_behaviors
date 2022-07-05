@@ -9,11 +9,11 @@ environment:
 dependencies:
   flame: ^1.2.0
   flame_behaviors: ^0.1.0
+  flame_steering_behaviors:
+    path: ../
   flutter:
     sdk: flutter
   mocktail: ^0.3.0
-  flame_steering_behaviors:
-    path: ../
 
 dev_dependencies:
   flame_test: ^1.5.0
