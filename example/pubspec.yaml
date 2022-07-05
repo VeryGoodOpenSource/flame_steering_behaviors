@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   mocktail: ^0.3.0
-  steering_behaviors:
+  flame_steering_behaviors:
     path: ../
 
 dev_dependencies:

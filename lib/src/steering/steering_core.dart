@@ -1,5 +1,5 @@
 import 'package:flame/extensions.dart';
-import 'package:steering_behaviors/steering_behaviors.dart';
+import 'package:flame_steering_behaviors/flame_steering_behaviors.dart';
 
 /// {@template steering_core}
 /// Base class for all steering behaviors.
