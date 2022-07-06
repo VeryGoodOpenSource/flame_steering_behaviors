@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:steering_behaviors/steering_behaviors.dart';
+import 'package:flame_steering_behaviors/flame_steering_behaviors.dart';
 
 /// {@template wander_behavior}
 /// Wander steering behavior.

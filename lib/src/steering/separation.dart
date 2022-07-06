@@ -1,6 +1,6 @@
 import 'package:flame/extensions.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
-import 'package:steering_behaviors/steering_behaviors.dart';
+import 'package:flame_steering_behaviors/flame_steering_behaviors.dart';
 
 /// {@template separation}
 /// Separation steering algorithm.

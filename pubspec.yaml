@@ -1,4 +1,4 @@
-name: steering_behaviors
+name: flame_steering_behaviors
 description: An implementation of steering behaviors for Flame Behaviors.
 version: 0.0.1-dev.0
 

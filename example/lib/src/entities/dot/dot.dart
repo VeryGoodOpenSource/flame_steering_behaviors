@@ -5,7 +5,7 @@ import 'package:example/src/example_game.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
-import 'package:steering_behaviors/steering_behaviors.dart';
+import 'package:flame_steering_behaviors/flame_steering_behaviors.dart';
 
 class Dot extends Entity with Steerable {
   Dot({
