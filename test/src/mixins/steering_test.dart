@@ -8,22 +8,7 @@ import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/helpers.dart';
 
-class _TestEntity extends SteerableEntity {
-  _TestEntity(Behavior behavior)
-      : super(behaviors: [behavior], size: Vector2.all(32));
-
-  @override
-  double get maxVelocity => 100;
-
-  @override
-  void renderDebugMode(Canvas canvas) {
-    // Custom debug render mode so that the PositionComponent text doesn't get
-    // rendered.
-    canvas.drawRect(Vector2.zero() & size, debugPaint);
-  }
-}
-
-class _TestBehavior extends Behavior<_TestEntity> with Steering {}
+class _TestBehavior extends Behavior<SteerableEntity> with Steering {}
 
 class _MockSteeringCore extends Mock implements SteeringCore {}
 
@@ -50,7 +35,10 @@ void main() {
       'update velocity by the linear acceleration from steering',
       (game) async {
         final behavior = _TestBehavior();
-        final entity = _TestEntity(behavior);
+        final entity = SteerableEntity(
+          behaviors: [behavior],
+          size: Vector2.all(32),
+        );
         await game.ensureAdd(entity);
 
         behavior.steer(steeringCore, 0.25);
@@ -63,7 +51,10 @@ void main() {
       'clamp velocity to max velocity when the linear acceleration is too high',
       (game) async {
         final behavior = _TestBehavior();
-        final entity = _TestEntity(behavior);
+        final entity = SteerableEntity(
+          behaviors: [behavior],
+          size: Vector2.all(32),
+        );
         await game.ensureAdd(entity);
 
         behavior.steer(steeringCore, 2);
@@ -76,7 +67,10 @@ void main() {
       'render current velocity as a line in debug mode',
       setUp: (game, tester) async {
         final behavior = _TestBehavior();
-        final entity = _TestEntity(behavior)..debugMode = true;
+        final entity = SteerableEntity(
+          behaviors: [behavior],
+          size: Vector2.all(32),
+        )..debugMode = true;
 
         await game.ensureAdd(entity);
         game.camera.followComponent(entity);

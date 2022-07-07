@@ -12,23 +12,23 @@ void main() {
     flameTester.test(
       'calculates the acceleration needed to separate',
       (game) async {
-        final separationBehavior = SeparationBehavior(
-          [
-            SteerableEntity(
-              position: Vector2.all(10),
-              size: Vector2.all(32),
-            ),
-            SteerableEntity(
-              position: Vector2.all(20),
-              size: Vector2.all(32),
-            ),
-          ],
-          maxDistance: 50,
-          maxAcceleration: 10,
-        );
-
         final parent = SteerableEntity(
-          behaviors: [separationBehavior],
+          behaviors: [
+            SeparationBehavior(
+              [
+                SteerableEntity(
+                  position: Vector2.all(10),
+                  size: Vector2.all(32),
+                ),
+                SteerableEntity(
+                  position: Vector2.all(20),
+                  size: Vector2.all(32),
+                ),
+              ],
+              maxDistance: 50,
+              maxAcceleration: 10,
+            )
+          ],
           position: Vector2.zero(),
           size: Vector2.all(32),
         );
