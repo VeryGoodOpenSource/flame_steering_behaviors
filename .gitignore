@@ -3,6 +3,9 @@
 .packages
 pubspec.lock
 
+# Android Studio and IntelliJ
+.idea
+
 # Conventional directory for build outputs
 build/
 
