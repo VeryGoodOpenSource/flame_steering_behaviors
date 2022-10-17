@@ -35,7 +35,7 @@ void main() {
         await game.ensureAdd(parent);
         game.update(1);
 
-        expect(parent.velocity, closeToVector(-29.08, -29.08, epsilon: 0.01));
+        expect(parent.velocity, closeToVector(Vector2(-29.08, -29.08), 0.01));
       },
     );
   });

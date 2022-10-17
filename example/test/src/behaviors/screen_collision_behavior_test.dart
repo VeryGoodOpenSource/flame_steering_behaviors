@@ -38,7 +38,7 @@ void main() {
       await game.ensureAdd(entity);
 
       screenCollisionBehavior.onCollisionEnd(screenHitbox);
-      expect(entity.position, closeToVector(0, 0));
+      expect(entity.position, closeToVector(Vector2(0, 0)));
     });
 
     flameTester.test('moves parent entity from top to bottom', (game) async {
@@ -49,7 +49,7 @@ void main() {
       await game.ensureAdd(entity);
 
       screenCollisionBehavior.onCollisionEnd(screenHitbox);
-      expect(entity.position, closeToVector(200, 0));
+      expect(entity.position, closeToVector(Vector2(200, 0)));
     });
 
     flameTester.test('moves parent entity from bottom to top', (game) async {
@@ -60,7 +60,7 @@ void main() {
       await game.ensureAdd(entity);
 
       screenCollisionBehavior.onCollisionEnd(screenHitbox);
-      expect(entity.position, closeToVector(0, 0));
+      expect(entity.position, closeToVector(Vector2(0, 0)));
     });
 
     flameTester.test('moves parent entity from left to right', (game) async {
@@ -71,7 +71,7 @@ void main() {
       await game.ensureAdd(entity);
 
       screenCollisionBehavior.onCollisionEnd(screenHitbox);
-      expect(entity.position, closeToVector(0, 200));
+      expect(entity.position, closeToVector(Vector2(0, 200)));
     });
 
     flameTester.test('moves parent entity from right to left', (game) async {
@@ -82,7 +82,7 @@ void main() {
       await game.ensureAdd(entity);
 
       screenCollisionBehavior.onCollisionEnd(screenHitbox);
-      expect(entity.position, closeToVector(0, 0));
+      expect(entity.position, closeToVector(Vector2(0, 0)));
     });
   });
 }

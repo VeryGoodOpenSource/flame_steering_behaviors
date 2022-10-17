@@ -43,7 +43,7 @@ void main() {
 
         behavior.steer(steeringCore, 0.25);
 
-        expect(entity.velocity, closeToVector(25, 25));
+        expect(entity.velocity, closeToVector(Vector2(25, 25)));
       },
     );
 
@@ -59,7 +59,7 @@ void main() {
 
         behavior.steer(steeringCore, 2);
 
-        expect(entity.velocity, closeToVector(70.71, 70.71, epsilon: 0.01));
+        expect(entity.velocity, closeToVector(Vector2(70.71, 70.71), 0.01));
       },
     );
 

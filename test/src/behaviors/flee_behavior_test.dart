@@ -32,13 +32,13 @@ void main() {
         target.position.setValues(20, 20);
         game.update(1);
 
-        expect(parent.velocity, closeToVector(0, 0, epsilon: 0.01));
+        expect(parent.velocity, closeToVector(Vector2(0, 0), 0.01));
 
         // Move target inside panic distance.
         target.position.setValues(5, 5);
         game.update(1);
 
-        expect(parent.velocity, closeToVector(-70.71, -70.71, epsilon: 0.01));
+        expect(parent.velocity, closeToVector(Vector2(-70.71, -70.71), 0.01));
       },
     );
 

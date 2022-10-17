@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors
+import 'package:flame/components.dart';
 import 'package:flame_test/flame_test.dart';
 import 'package:test/test.dart';
 
@@ -17,8 +18,8 @@ void main() {
         await game.ensureAdd(entity);
         game.update(0.25);
 
-        expect(entity.velocity, closeToVector(75, 75));
-        expect(entity.position, closeToVector(25, 25));
+        expect(entity.velocity, closeToVector(Vector2(75, 75)));
+        expect(entity.position, closeToVector(Vector2(25, 25)));
       },
     );
   });
