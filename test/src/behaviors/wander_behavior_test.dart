@@ -54,7 +54,7 @@ void main() {
         game.update(1);
 
         expect(wanderBehavior.angle, expectedAngle);
-        expect(parent.velocity, closeToVector(0, 40, epsilon: 0.01));
+        expect(parent.velocity, closeToVector(Vector2(0, 40), 0.01));
       },
     );
   });

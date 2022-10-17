@@ -30,7 +30,7 @@ void main() {
 
       final linearAcceleration = steering.getSteering(parent);
 
-      expect(linearAcceleration, closeToVector(-29.08, -29.08, epsilon: 0.01));
+      expect(linearAcceleration, closeToVector(Vector2(-29.08, -29.08), 0.01));
     });
 
     test('skips self', () {
@@ -47,7 +47,7 @@ void main() {
 
       final linearAcceleration = steering.getSteering(parent);
 
-      expect(linearAcceleration, closeToVector(0, 0));
+      expect(linearAcceleration, closeToVector(Vector2(0, 0)));
     });
 
     test('does not separate if other entities are too far away', () {
@@ -70,7 +70,7 @@ void main() {
 
       final linearAcceleration = steering.getSteering(parent);
 
-      expect(linearAcceleration, closeToVector(0, 0));
+      expect(linearAcceleration, closeToVector(Vector2(0, 0)));
     });
   });
 }

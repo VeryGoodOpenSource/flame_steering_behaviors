@@ -56,7 +56,7 @@ void main() {
         );
 
         final linearAcceleration = steering.getSteering(parent);
-        expect(linearAcceleration, closeToVector(40, 0, epsilon: 0.01));
+        expect(linearAcceleration, closeToVector(Vector2(40, 0), 0.01));
       });
 
       test('when the start angle is 180 it should go to the left', () {
@@ -73,7 +73,7 @@ void main() {
         when(random.nextDouble).thenReturn(0.25);
 
         final linearAcceleration = steering.getSteering(parent);
-        expect(linearAcceleration, closeToVector(-40, 0, epsilon: 0.01));
+        expect(linearAcceleration, closeToVector(Vector2(-40, 0), 0.01));
       });
 
       test('when the start angle is 90 it should go to the bottom', () {
@@ -90,7 +90,7 @@ void main() {
         when(random.nextDouble).thenReturn(0.25);
 
         final linearAcceleration = steering.getSteering(parent);
-        expect(linearAcceleration, closeToVector(0, 40, epsilon: 0.01));
+        expect(linearAcceleration, closeToVector(Vector2(0, 40), 0.01));
       });
 
       test('when the start angle is 270 it should go to the top', () {
@@ -105,7 +105,7 @@ void main() {
         );
 
         final linearAcceleration = steering.getSteering(parent);
-        expect(linearAcceleration, closeToVector(0, -40, epsilon: 0.01));
+        expect(linearAcceleration, closeToVector(Vector2(0, -40), 0.01));
       });
     });
   });

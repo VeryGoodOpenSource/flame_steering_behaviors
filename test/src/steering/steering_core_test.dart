@@ -21,7 +21,7 @@ void main() {
       final steeringCore = _TestSteeringCore();
       final steering = steeringCore.seek(parent, target);
 
-      expect(steering, closeToVector(-70.71, 70.71, epsilon: 0.01));
+      expect(steering, closeToVector(Vector2(-70.71, 70.71), 0.01));
     });
   });
 }

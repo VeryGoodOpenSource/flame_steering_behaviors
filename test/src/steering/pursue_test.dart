@@ -18,7 +18,7 @@ void main() {
 
       final steering = pursue.getSteering(parent);
 
-      expect(steering, closeToVector(-70.71, -70.71, epsilon: 0.01));
+      expect(steering, closeToVector(Vector2(-70.71, -70.71), 0.01));
     });
 
     test('clamps prediction by max prediction based on speed and distance', () {
@@ -33,7 +33,7 @@ void main() {
 
       final steering = pursue.getSteering(parent);
 
-      expect(steering, closeToVector(0, 0));
+      expect(steering, closeToVector(Vector2(0, 0)));
     });
   });
 }
