@@ -2,6 +2,8 @@ name: example
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "example/**"
       - ".github/workflows/example.yaml"
