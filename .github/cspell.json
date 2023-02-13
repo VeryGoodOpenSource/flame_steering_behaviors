@@ -19,6 +19,10 @@
   ],
   "useGitignore": true,
   "words": [
-
+    "Hitbox",
+    "gameplay",
+    "collidable",
+    "Draggables",
+    "Tappables"
   ]
 }
