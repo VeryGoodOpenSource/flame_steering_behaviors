@@ -26,6 +26,15 @@ jobs:
       flutter_channel: stable
       flutter_version: 3.0.0
 
+  spell-check:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/spell_check.yml@v1
+    with:
+      includes: |
+        **/*.{dart,md,yaml}
+        !.dart_tool/**/*.{dart,yaml}
+        .*/**/*.yml
+      modified_files_only: false
+
   pana:
     runs-on: ubuntu-latest
     steps:
