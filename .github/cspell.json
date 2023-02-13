@@ -23,6 +23,7 @@
     "gameplay",
     "collidable",
     "Draggables",
-    "Tappables"
+    "Tappables",
+    "Hoverables"
   ]
 }
