@@ -20,3 +20,4 @@ jobs:
       flutter_channel: stable
       flutter_version: 3.7.3
       working_directory: example
+      runs_on: macos
